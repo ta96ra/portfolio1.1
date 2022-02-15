@@ -1,0 +1,588 @@
+// 定義等
+@charset"UTF-8";
+$black:rgb(50,50,50);
+$gray:rgb(180,180,180);
+$tab: 1000px;
+$sp:670px;
+@mixin tab{
+  @media(max-width:($tab)){
+  @content;
+  }
+}
+@mixin sp{
+  @media(max-width:($sp)){
+  @content;
+  }
+}
+
+// 共通
+body{
+  margin: 0;
+  font-size: 100%;
+  font-family: 'Yuji Syuku', serif;
+}
+h3{
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+  @include tab{
+    font-size: 1.75rem;
+  }
+  @include sp{
+    font-size: 1.5rem;
+  }
+}
+p{
+  margin: 0;
+  font-size: 1.25rem;
+  @include sp{
+    font-size: 1rem;
+  }
+}
+a{
+  text-decoration: none;
+}
+ul{
+  margin: 0;
+  padding: 0;  
+}
+li{
+  list-style: none;
+}
+dt,dd{
+  @include sp{
+    font-size: 1rem;
+  }
+}
+dd{
+  margin: 0;
+}
+img{
+  vertical-align: bottom;
+}
+.wrapper{
+  max-width:920px;
+  min-height: calc(100vh - 340px);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  @include sp{
+    padding: 0 10px;
+    height: calc(100vh - 240px);
+  }
+}
+.title{
+  margin: 20px 0 60px;
+  opacity:0.8;
+  height: 200px;
+  width: 100vw;
+  background-position:center;
+  background-size:cover;
+  background-attachment: fixed;
+  position:relative;
+  @include sp{
+    height: 100px;
+  }
+  h2{
+    margin: 0;
+    font-size: 4rem;
+    color:white;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:2;
+    text-shadow: 2px 2px 3px $gray;
+    width: 100%;
+    text-align: center;
+    @include tab{
+      font-size: 3.2rem;
+    }
+    @include sp{
+      font-size: 1.75rem;
+    }
+  }
+  .black-window{
+    height: 200px;
+    width: 100vw;
+    background: black;
+    opacity:0.6;
+    position:absolute;
+    top: 0;
+    left: 0;
+    @include sp{
+      height: 100px;
+    }
+  }  
+}
+
+
+// ヘッダー
+header{ 
+  width: 100%; 
+  position:fixed;
+  z-index:3;
+  .header-top{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    line-height: 60px;
+    background: $black;
+    .logo{
+      a{
+        margin-left: 30px;
+        font-size: 1.5rem;
+        color:white;
+        text-shadow: 1px 1px 3px $gray;;
+        &:hover{
+          color:$gray;
+        }
+      }
+    }
+    nav{
+      @include tab{
+        display: none;
+      }
+      ul{
+        display: flex;
+        li{
+          padding-right: 40px;
+          a{
+            color: white;
+            &:hover{
+              color:$gray;
+              transition-duration:0.5s;
+            }
+          }
+        }
+      }
+    }
+    .list{
+      padding-right: 30px;
+      display: none;
+      @include tab{
+        display: block;
+        .bi-list{
+          font-size: 2.25rem;
+          display: block;
+          width: 60px;
+          color:white;
+          text-align: center;
+          cursor: pointer;
+          &:hover{
+            color:$gray;
+            transition-duration: 0.5s;
+          }
+        }
+      }
+      @include sp{
+        padding-right: 10px;
+      }
+    }
+  }
+  .nav-window{
+    outline: 2px solid white;
+    width: 200px;
+    margin-right: 40px;
+    margin-left: auto;
+    display: none;
+    @include tab{
+      display: none;
+    }
+    @include sp{
+      margin-right: 20px;
+    }
+    ul{
+      li{
+        text-align: center;
+        line-height: 40px;
+        background: rgb(120,120,120);
+        &:hover{
+          background: $black;
+          transition-duration:0.5s;
+        }
+        a{
+          color:white;
+          font-size: 1.33rem;
+        }
+      }
+      li + li{
+        border-top: 2px solid white;
+      }
+    }
+  }
+}
+
+// メインビジュアル
+.mainvisual{
+  position: relative;
+  h1{
+    position:absolute;
+    top: 50%;
+    transform:translate(0,-100%);
+    text-align: center;
+    font-size:6rem;
+    color:white;
+    width: 100%;
+    z-index:2;
+    text-shadow: 3px 3px 3px $gray;
+    @include tab{
+      font-size: 4.5rem;
+    }
+    @include sp{
+      font-size: 3.33rem;
+    }
+  }
+  img{
+    width:100vw;
+    height: 100vh;
+    object-fit:cover;
+    object-position: center;
+    opacity:0.8;
+  }
+}
+
+// 自己紹介
+#about{
+  .title{
+    background-image: url(../img/subvisual3.jpg);
+  }
+  .wrapper{
+    @include tab{
+      height: auto;
+    }
+    .about-content{
+      display: flex;
+      @include tab{
+        flex-direction: column;
+      }
+      .about-img{
+        width: 40%;
+        @include tab{
+          width: 472.5px;
+          margin: 0 auto;
+          margin-bottom: 40px;
+        }
+        @include sp{
+          width: 75%;
+        }
+        img{
+          width: 100%;
+          box-shadow:5px 5px 10px $gray;
+          @include tab{
+            border-radius: 15%;
+          }         
+        }
+      }
+      .about-text{
+        padding-left: 5%;
+        width: 55%;
+        @include tab{
+          padding-left: 0;
+          width: 100%;
+        }
+        dl{
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 1.25rem;
+          dt{
+            width: 30%;
+            @include tab{
+              width: 20%;
+            }
+            @include sp{
+              width: 25%;
+            }
+          }
+          dd{
+            width: 70%;
+            @include tab{
+              width: 80%;
+            }
+            @include sp{
+              width: 75%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 実績、制作物
+#work{
+  .title{
+    background-image: url(../img/works1.jpg);
+  }
+  .wrapper{
+    height: auto;
+    .work-content{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .work-item{
+        width: 47%;
+        margin-bottom: 30px;
+        
+        &:hover{
+          cursor: pointer;
+        }
+        @include sp{
+          width: 90%;
+          margin: 20px auto;
+        }
+        .work-img{
+          position: relative;
+          img{
+            width: 100%;
+            border: 2px solid;
+            box-shadow: 8px 0 15px $gray;
+          }
+          .min-black{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0.4;
+            display: none;
+            .keyd-top{
+              position: absolute;
+              top: 20px;
+              left: 20px;
+              width: 25%;
+              height: 25%;
+              border-top: 3px solid white;
+              border-left: 3px solid white;  
+            }
+            .keyd-bottom{
+              position: absolute;
+              bottom: 20px;
+              right: 20px;
+              width: 25%;
+              height: 25%;
+              border-bottom: 3px solid white;
+              border-right: 3px solid white;
+            }
+            .plus-row{
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform:translateX(-50%);
+              width: 15%;
+              height: 3px;
+              background: white;
+            }  
+            .plus-col{
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform:translateY(-50%);
+              width: 3px;
+              height: 20%;
+              background: white;
+            }  
+          }
+        }      
+      }
+    }
+  }
+}
+
+// モーダル
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  z-index:4;
+  .modal-close{
+    background: $black;
+    width: 40px;
+    height: 40px;
+    top: 40px;
+    left:calc(100vw - 80px);
+    z-index:5;
+    display: flex;
+    position: relative;
+    @include sp{
+      left:calc(100vw - 40px);
+    }
+    &:hover{
+      cursor: pointer;
+    }
+    &::before{
+      content:'';
+      position: absolute;
+      top: 0;
+      left: 18px;
+      width: 4px;
+      height: 40px;
+      background: white;
+      transform:rotate(45deg);
+    }
+    &::after{
+      content:'';
+      position: absolute;
+      top: 18px;
+      left: 0;
+      width: 40px;
+      height: 4px;
+      background: white;
+      transform:rotate(45deg);
+    }
+  }
+  .modal-img{
+    // outline: 2px solid pink;
+    width: 100%;
+    height: calc(100vh - 80px);
+    img{
+      display: block;
+      background: gray;
+      height: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
+// スキル
+#skill{
+  .title{
+    background-image: url(../img/web2.jpg);
+  }
+  .wrapper{
+    @include sp{
+      height: auto;
+    }
+    .skill-content{
+      display: flex;
+      @include sp{
+        flex-direction: column;
+      }
+      .item{
+        width: 30%;
+        @include sp{
+          width: 85%;
+          margin: 20px auto;
+        }
+        img{
+          width: 100%;
+          max-width:350px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      .item + .item{
+        padding-left: 5%;
+        @include sp{
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+// できること
+#ican{
+  .title{
+    background-image: url(../img/ican.jpg);
+  }
+  .wrapper{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    @include sp{
+      flex-direction: column;
+      align-items: center;
+    }
+    .ican-item{
+      width: 47%;
+      @include sp{
+        width: 80%;
+      }
+      h3{
+        padding-bottom: 10px;
+        @include tab{
+          font-size:1.5rem;
+        }
+      }
+      .ican-img{
+        display: flex;
+        align-items: center;
+        img{
+          width: 100%;
+        }
+      }
+      p{
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+}
+
+// コンタクト
+#contact{
+  .title{
+    background-image: url(../img/contact2.jpg);
+    .black-window{
+      opacity:0.2;
+    }
+  }
+  .wrapper{
+    height: auto;
+    .here{
+      text-align: center;
+      padding-bottom: 40px;
+      font-size: 1.5rem;
+    }
+    form{
+      fieldset{
+        border:none;
+        p{
+          margin: 0 auto;
+          max-width: 500px;
+          padding-bottom: 30px;
+          @include sp{
+            max-width: 420px;
+          }
+          label{
+            display: block;
+            input{
+              display: block;
+              width: 100%;
+              height: 30px;
+            }
+            textarea{
+              display: block;
+              width: 100%;
+              height: 90px;
+            }
+          }
+          #submit{
+            font-family: 'Yuji Syuku', serif;
+            height: 40px;
+            width: 150px;
+            font-size: 1.25rem;
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
+footer{
+  background: $black;
+  margin-top: 50px;
+  p{
+    font-size: 0.875rem;
+    padding: 15px 0;
+    text-align: center;
+    color:white;
+  }
+}

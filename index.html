@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Takem Production</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="#">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
+    </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">
+        <a href="#">Takem Production</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">自己紹介</a></li>
+          <li><a href="#work">実績・制作物</a></li>
+          <li><a href="#skill">Webスキル</a></li>
+          <li><a href="#ican">できること</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <div class="list">
+          <i class="bi bi-list"></i>
+      </div>
+    </div>
+    <div class="nav-window">
+      <ul>
+        <li><a href="#about">自己紹介</a></li>
+        <li><a href="#work">実績・制作物</a></li>
+        <li><a href="#skill">Webスキル</a></li>
+        <li><a href="#ican">できること</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="mainvisual">
+    <h1>Takem Production</h1>
+    <img src="img/mainvisual1.jpg" alt="メインビジュアル">
+  </div>
+  <section id="about">
+    <div class="title">
+      <h2>自己紹介</h2>
+      <div class="black-window"></div>
+    </div>
+    <div class="wrapper">
+      <div class="about-content">
+        <div class="about-img">
+          <img src="img/about1.jpg" alt="">
+        </div>
+        <div class="about-text">
+          <dl>
+            <dt>名 前</dt>
+            <dd>竹村 滋人（たけむら しげと）</dd>
+            <dt>誕生年</dt>
+            <dd>１９９０年</dd>
+            <dt>得意なジャンル</dt>
+            <dd>軍事(兵器、戦争史)、株式投資</dd>
+            <dt>できること</dt>
+            <dd>コーディング、ライティング</dd>
+            <dt>経 歴</dt>
+            <dd>防大卒、陸上自衛隊に８年間勤務した後、WEBエンジニアを目指すべく退職、現在勉強中</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="work">
+    <div class="title">
+      <h2>実績・制作物</h2>
+      <div class="black-window"></div>
+    </div>
+    <div class="wrapper">
+      <div class="work-content scroll-fade-row">
+        <div class="work-item" data-src="img/Aonofull.png">
+          <div class="work-img">
+            <img src="img/Aono.png" alt="蒼乃建設">
+            <div class="min-black">
+              <span class="keyd-top"></span>
+              <span class="keyd-bottom"></span>
+              <span class="plus-row"></span>
+              <span class="plus-col"></span>
+            </div>
+          </div> 
+          <h3>模写作品　蒼乃建設</h3>   
+        </div>
+        <div class="work-item" data-src="img/Travelfull.png">
+          <div class="work-img">
+            <img src="img/TravelBlog.png" alt="Travel Blog">
+            <div class="min-black">
+              <span class="keyd-top"></span>
+              <span class="keyd-bottom"></span>
+              <span class="plus-row"></span>
+              <span class="plus-col"></span>
+            </div>
+          </div>
+          <h3>模写作品　Travel Blog</h3>  
+        </div>
+        <div class="work-item" data-src="img/isarafull.png">
+          <div class="work-img">
+            <img src="img/isara.png" alt="iSara">
+            <div class="min-black">
+              <span class="keyd-top"></span>
+              <span class="keyd-bottom"></span>
+              <span class="plus-row"></span>
+              <span class="plus-col"></span>
+            </div>
+          </div>
+          <h3>模写作品　iSara</h3>      
+        </div>
+        <div class="work-item" data-src="img/Hramyogafull.png">
+          <div class="work-img">
+            <img src="img/Hramyoga.png" alt="Hram yoga">
+            <div class="min-black">
+              <span class="keyd-top"></span>
+              <span class="keyd-bottom"></span>
+              <span class="plus-row"></span>
+              <span class="plus-col"></span>
+            </div>
+          </div>
+          <h3>個人サイト　Hram yoga</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="modal">
+    <div class="modal-close">  
+    </div>
+    <div class="modal-img">
+      <img src="" alt="">
+    </div>
+  </div>
+  <section id="skill">
+    <div class="title">
+      <h2>Webスキル</h2>
+      <div class="black-window"></div>
+    </div>
+    <div class="wrapper">
+      <div class="skill-content scroll-fade-row">
+        <div class="item">
+          <h3>HTML</h3>
+          <img src="img/html.png" alt="html">
+          <p>文書・表の作成、画像・動画の埋め込み、お問い合わせフォーム（googleフォームとの連携）、Bootstrapを使用することができます。</p>
+        </div>
+        <div class="item">
+          <h3>CSS/SCSS</h3>
+          <img src="img/css.png" alt="css">
+          <p>フレックスボックス,グリッドレイアウト、レスポンシブデザイン、アニメーション、入れ子構造、変数及び関数を使用することができます。</p>
+        </div>
+        <div class="item">
+          <h3>jQuery</h3>
+          <img src="img/javascript.png" alt="">
+          <p>スクロール、モーダル、スライド、アコーディオンの実装及びフォームの操作をすることができます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="ican">
+    <div class="title">
+      <h2>できること</h2>
+      <div class="black-window"></div>
+    </div>
+    <div class="wrapper scroll-fade-row">
+      <div class="ican-item">
+        <h3>軍事に関する記事の作成</h3>
+        <div class="ican-img">
+          <img src="img/tank2.jpg" alt="">
+        </div>
+        <p>防衛大学校や自衛隊の勤務経験を活かし自衛隊、外国の装備品や戦争史についての記事を作成することができます。</p>
+      </div>
+      <div class="ican-item">
+        <h3>データー入力</h3>
+        <div class="ican-img">
+          <img src="img/computer.jpg" alt="">
+        </div>
+        <p>word,excel,powerpoint他、number,keynote,pagesを扱うことができます。タイピングも得意です。</p>
+      </div>
+    </div>  
+  </section>
+  <section id="contact">
+    <div class="title">
+      <h2>お問い合わせ</h2>
+      <div class="black-window"></div>
+    </div>   
+    <div class="wrapper">
+      <p class="here">お問い合わせはこちらから</p>
+      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScxIEl0050ShYgmhWlAyy9b78eeIn09x1r4hdbgVadD-fn5FA/formResponse" method="post">
+        <fieldset>
+          <p>
+            <label>
+              名 前:<input type="text" name="entry.2005620554">
+            </label>
+          </p>
+          <p>
+            <label>
+              メールアドレス:<input type="email" name="entry.1045781291">
+            </label>
+          </p>
+          <p>
+            <label>
+              件 名:<input type="text" name="entry.1166974658">
+            </label>
+          </p>   
+          <p> 
+            <label>
+              本 文:<textarea name="entry.839337160"></textarea>
+            </label>
+          </p>
+          <p>
+            <input type="submit" id="submit">
+          </p>
+        </fieldset>         
+      </form>
+    </div>
+  </section>
+  <footer>
+    <p>©️ 2022 Shigeto Takemura</p>
+  </footer>
+<script src="script/main.js"></script>
+</body>
+</html>
